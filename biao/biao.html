@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .clock{
+        width: 300px;height: 300px;border: 5px solid #ccc;background:radial-gradient(#fff,#eee);border-radius: 50%;box-shadow: 0px 4px 10px #000;
+        position: fixed;left: 0;right:0;top:0;bottom:0;margin:auto;
+    }
+    .xin{
+        width: 10px;height: 10px;border-radius: 50%;background: #000;position: absolute;left: 0;top:0;right: 0;bottom:0;margin:auto;
+    }
+</style>
+<body>
+
+<div class="clock">
+    <div class="xin"></div>
+</div>
+</body>
+<script>
+    var clock=document.querySelector(".clock");
+    createMark();
+
+    var times=new Date();
+    var hours=times.getHours();
+    var min=times.getMinutes();
+    var sen=times.getSeconds();
+
+    var h=createPointer(4,50,"#000",hours*30+min*6/12);
+    var m=createPointer(3,70,"#000",min*6);
+    var s=createPointer(2,90,"#000",sen*6);
+
+    setInterval(function(){
+         var times=new Date();
+         hours=times.getHours();
+         min=times.getMinutes();
+         sen=times.getSeconds();
+         h.style.transform="rotate("+(hours*30+min*6/12)+"deg)";
+         m.style.transform="rotate("+min*6+"deg)";
+         s.style.transform="rotate("+sen*6+"deg)";
+    },1000);
+
+      function createMark() {
+          var widths,heights;
+          for (var i = 0; i < 60; i++) {
+              if(i%5==0){
+                  widths=5;heights=10;
+              }else{
+                  widths=2;heights=6;
+              }
+              var div = document.createElement("div");
+              div.style.cssText = "width:"+widths+"px;height:"+heights+"px;background:#777;position:absolute;left:"+(300-widths)/2+"px;top:0";
+              div.style.transform="rotate("+i*6+"deg)";
+              div.style.transformOrigin="center "+150+"px";
+              clock.appendChild(div);
+          }
+      }
+      function createPointer(w,h,c,a){
+//          var w,h,c;
+          var div = document.createElement("div");
+          div.style.cssText = "width:"+w+"px;height:"+h+"px;background:#000;position:absolute;left:"+(300-w)/2+"px;top:"+(150-h)+"px";
+          div.style.transformOrigin="center bottom";
+          div.style.transform="rotate("+a+"deg)";
+          clock.appendChild(div);
+          return div;
+      }
+</script>
+</html>

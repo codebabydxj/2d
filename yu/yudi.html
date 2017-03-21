@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>雨滴</title>
+</head>
+<style>
+    body,html {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: #000;
+        overflow: hidden;
+    }
+</style>
+<body>
+
+</body>
+<script>
+var body=document.querySelector("body");
+var cw=document.documentElement.clientWidth;
+var ch=document.documentElement.clientHeight;
+var arr=[];
+for(var i=0;i<100;i++){
+   var div=document.createElement("div");
+   var times=6*Math.random();
+   div.style.cssText="width:1px;height:3px;border-radius:50%;background:#fff;position:absolute;left:"+(20+(cw-40)*Math.random())+"px;top:-10px;";
+   div.style.transition="transform 3s ease-in "+times+"s";
+    arr.push(div);
+   body.appendChild(div);
+}
+setTimeout(function(){
+  for(var i=0;i<arr.length;i++) {
+      arr[i].style.transform = "translate(0," + ch + "px)";
+
+      arr[i].addEventListener("webkitTransitionEnd", function () {
+          this.style.transition="none";
+          this.style.transform = "translate(0,0)";
+          var that=this;
+          var t=setTimeout(function(){
+              that.style.transform = "translate(0," + ch + "px)";
+              that.style.transition="transform 3s ease-in "+times+"s";
+              clearTimeout(t);
+          },0)
+      })
+  }
+},0)
+
+</script>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .header{
+        width: 200px;height: 200px;border-radius: 47%;border: 1px solid #000;
+        background: linear-gradient(#7fdef4 50%,#085266);position: relative;margin:auto;
+        box-shadow: -4px 2px 10px #888;
+    }
+    .lian{
+        width: 170px;height:150px ;position: absolute;left: 15px;bottom:-1px ;border: 1px solid #000;background: #fff;border-radius: 50%;
+    }
+    .yan1,.yan2{
+        width: 50px;height: 60px;background: #fff;border: 1px solid #000;border-radius:40%;position: absolute;top:-30px ;
+    }
+    .yan1{
+        left: 33px;
+    }
+    .yan2{
+        right: 33px;
+    }
+    .yanzhu1,.yanzhu2{
+        width: 10px;height: 10px;background: #333333;border-radius:50%;position: absolute;bottom:10px ;
+    }
+    .yanzhu1{
+        left: 36px;
+    }
+    .yanzhu2{
+        right: 36px;
+    }
+    .bizi{
+        width: 20px;height: 20px;background:#c93e00;border: 1px solid #000;border-radius: 50%;position: absolute;left: 75px;top:22px
+    }
+    .bai{
+        width: 7px;height: 7px;border-radius: 50%;position: absolute;right: 0;top:5px;
+        background: radial-gradient(#fff 70%,#ccc);box-shadow: 0 0 10px #fff;
+    }
+    .mao{
+        width: .5px;height: 45px;background: #333333;position: absolute;left: 45px;top:42px;
+        transform: rotate(90deg);
+    }
+    .mao2{
+        transform: rotate(105deg);top:27px;
+    }
+    .mao3{
+        transform: rotate(80deg);top:55px;
+    }
+    .mao4{
+        transform: rotate(90deg);left:130px;
+    }
+    .mao5{
+        transform: rotate(-105deg);left:130px;top:27px;
+    }
+    .mao6{
+        transform: rotate(-80deg);left:130px;top:55px;
+    }
+    .renzhong{
+        width: 1.5px;height: 65px;background:#333333 ;position: absolute;left: 85px;top:42px;
+    }
+    .zui{
+        width: 100px;height:40px;position: absolute;left: 35px;top:65px;
+        border-bottom: 2px solid #333333;border-radius: 45%;
+    }
+    .weijin{
+        width:140px;height: 18px;border: 2px solid #000;border-radius:10px;position: absolute;left: 12px;bottom: -5px;
+        background: linear-gradient(#892200,#a72400);z-index: 20;
+    }
+    .lindang{
+        width: 30px;height: 30px;border: 1px solid #000;border-radius: 50%;position: absolute;left:58px;bottom:-20px;
+        background: linear-gradient(#f3eb24 65%,#b4ac04);z-index: 30;
+    }
+    .line{
+        width:26px ;height: 1px;background: #000;position: absolute;left: 2px;top:5px;
+    }
+    .line1{
+        width: 30px;height:2px;top:10px;left:.8px;
+    }
+    .dian{
+        width: 7px;height: 5px;border-radius: 50%;background: #000;position: absolute;left:12px;top:15px;
+    }
+    .line2{
+        width: 2px;height: 10px;background: #000;position: absolute;left: 14.5px;top:20px;
+    }
+
+    .cat-body{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        position: absolute;
+        background: #fff;
+        top:185px;
+        left: 42px;
+        z-index: 9;
+    }
+    .mu{
+        width: 100px;
+        height: 35px;
+        background: #fff;
+        position: absolute;
+        top:214px;
+        left: 53px;
+        z-index: 11;
+    }
+    .mu-2{
+        width: 65px;
+        height: 45px;
+        background: #fff;
+        position: absolute;
+        top:184px;
+        left: 70px;
+        z-index: 12;
+    }
+    .bag{
+        width: 90px;
+        height: 90px;
+        border-radius:50%;
+        border-bottom: 2px solid #000;
+        border-left: 2px solid #000;
+        border-right: 2px solid #000;
+        position: absolute;
+        top:203px;
+        left: 58px;
+        z-index: 10;
+    }
+    .bag .line{
+        width: 90px;
+        height: 2px;
+        position: absolute;
+        top:45px;
+        left: 0;
+    }
+    .arm-left{
+        width: 30px;
+        height: 90px;
+        position: absolute;
+        background: #0083a6;
+        border: 2px solid #000;
+        top:187px;left:5px;
+        transform: rotate(45deg);
+    }
+    .hand-left{
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+        background: #fff;
+        border:2px solid #000;
+        position: absolute;
+        top: 240px;
+        left: -30px;
+    }
+    .arm-right{
+        width: 30px;
+        height: 90px;
+        position: absolute;
+        background: #07bce9;
+        border: 2px solid #000;
+        top:187px;
+        right:5px;
+        transform: rotate(-45deg);
+    }
+    .hand-right{
+        width: 40px;
+        height: 40px;
+        border-radius: 25px;
+        background: #fff;
+        border:2px solid #000;
+        position: absolute;
+        top: 240px;
+        right: -30px;
+    }
+    .cat-body-2{
+        width: 150px;
+        height: 100px;
+        background: -webkit-gradient(linear, right top, left top, from(#07beea),color-stop(1, #0083a6));
+        position: absolute;
+        border: 2px solid #000;
+        border-top: 0px;
+        top: 230px;
+        left: 24px;
+        box-shadow: rgba(0, 0, 0, 0.45098) -6px 13px 15px;
+    }
+    .foot-left{
+        width: 85px;
+        height: 25px;
+        position: absolute;
+        left: 12px;
+        top:330px;
+        border: 2px solid #000;
+        border-radius: 30px;
+        background: #fff;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 40px;
+        z-index: 2;
+        box-shadow: 6px 4px 6px #999 inset;
+    }
+    .foot-right{
+        width: 85px;
+        height: 25px;
+        position: absolute;
+        right: 9px;
+        top:330px;
+        border: 2px solid #000;
+        border-radius: 30px;
+        background: #fff;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 40px;
+        z-index: 2;
+        box-shadow: -6px 4px 6px #999 inset;
+    }
+    .foot-con{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border:2px solid #000;
+        position: absolute;
+        left: 90px;
+        top: 320px;
+    }
+    .mu-3{
+        width: 24px;
+        height: 13px;
+        background: #fff;
+        position: absolute;
+        left: 90px;
+        top: 332px;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="lian">
+            <div class="yan1"><div class="yanzhu1"></div></div>
+            <div class="yan2"><div class="yanzhu2"></div></div>
+            <div class="bizi"><div class="bai"></div></div>
+            <div class="mao"></div>
+            <div class="mao mao2"></div>
+            <div class="mao mao3"></div>
+            <div class="mao mao4"></div>
+            <div class="mao mao5"></div>
+            <div class="mao mao6"></div>
+            <div class="renzhong"></div>
+            <div class="zui"></div>
+            <div class="weijin"><div class="lindang">
+                <div class="line"></div>
+                <div class="line line1"></div>
+                <div class="dian"></div>
+                <div class="line2"></div>
+            </div></div>
+        </div>
+        <div class="cat-body"></div>
+        <div class="mu"></div>
+        <div class="mu-2"></div>
+        <div class="bag">
+            <div class="line"></div>
+        </div>
+        <div class="arm-left"></div>
+        <div class="hand-left"></div>
+        <div class="arm-right"></div>
+        <div class="hand-right"></div>
+        <div class="cat-body-2"></div>
+        <div class="foot-left"></div>
+        <div class="foot-right"></div>
+        <div class="foot-con"></div>
+        <div class="mu-3"></div>
+    </div>
+
+</body>
+</html>
